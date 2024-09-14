@@ -1,44 +1,4 @@
-<br />
-<div class="container">
-  <h1>
-    <i class="bi bi-book-half"></i>
-    Cryptobook <span><h6>v 0.1</h6></span>
-  </h1>
-</div>
-<hr />
+<app-navbar />
 
-<div class="container">
-  <br />
-  <textarea
-    class="form-control"
-    [(ngModel)]="value"
-    rows="10"
-    placeholder="Type your secret contents..."
-  ></textarea>
-  <hr />
-  <input
-    type="email"
-    class="form-control"
-    placeholder="Type password..."
-    [(ngModel)]="password"
-  />
-
-  <br />
-
-  <div class="row">
-    <div class="col-md-6 p-1">
-      <button class="col-12 btn btn-primary" (click)="value = encrypt(value)">
-        <i class="bi bi-lock-fill"></i>
-
-        Encrypt
-      </button>
-    </div>
-    <div class="col-md-6 p-1">
-      <button class="col-12 btn btn-secondary" (click)="value = decrypt(value)">
-        <i class="bi bi-unlock-fill"></i>
-
-        Decrypt
-      </button>
-    </div>
-  </div>
-</div>
+<app-sign-in *ngIf="mainService.loggedIn === false" />
+<app-notes *ngIf="mainService.loggedIn === true" />

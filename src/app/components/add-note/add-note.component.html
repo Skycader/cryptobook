@@ -1,0 +1,17 @@
+<textarea
+  class="form-control"
+  [(ngModel)]="value"
+  rows="10"
+  placeholder="Type your secret contents..."
+></textarea>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12 p-1">
+    <button class="col-12 btn btn-primary" (click)="addNote()">
+      <i class="bi bi-patch-plus-fill"></i>
+      Add note
+    </button>
+  </div>
+</div>
