@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MainService } from '../../service/main.service';
 import { AddNoteComponent } from '../add-note/add-note.component';
 import { UserNoteComponent } from '../user-note/user-note.component';
 import { UserNotesComponent } from '../user-notes/user-notes.component';
@@ -10,4 +11,6 @@ import { UserNotesComponent } from '../user-notes/user-notes.component';
   templateUrl: './notes.component.html',
   styleUrl: './notes.component.scss',
 })
-export class NotesComponent {}
+export class NotesComponent {
+  public mainService = inject(MainService);
+}

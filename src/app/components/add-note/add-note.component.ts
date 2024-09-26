@@ -28,6 +28,6 @@ export class AddNoteComponent {
       body: this.cryptoService.encrypt(this.value, this.mainService.password),
     });
 
-    this.mainService.fetchNotes();
+    this.value = '';
   }
 }

@@ -10,7 +10,7 @@ export class MainService {
   public loggedIn: boolean = false;
   public password = '';
   public notes: NoteInterface[] = [];
-  public allNotes: NoteInterface[] = [];
+  public allNotes: NoteInterface[] = this.persistance.get('notes');
 
   constructor(
     private persistance: PersistanceService,
@@ -20,6 +20,7 @@ export class MainService {
   public addNote(note: NoteInterface) {
     this.allNotes.push(note);
     this.persistance.set('notes', this.allNotes);
+    this.fetchNotes();
   }
 
   public fetchNotes() {
